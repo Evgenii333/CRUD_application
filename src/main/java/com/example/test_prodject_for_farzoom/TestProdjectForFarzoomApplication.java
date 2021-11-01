@@ -13,8 +13,5 @@ public class TestProdjectForFarzoomApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TestProdjectForFarzoomApplication.class, args);
-        TaskRepositoryImpl taskRepository = new TaskRepositoryImpl();
-        taskRepository.str();
-
     }
 }

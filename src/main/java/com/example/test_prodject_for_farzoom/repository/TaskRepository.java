@@ -9,8 +9,8 @@ public interface TaskRepository {
 
     boolean createTask(Task task);
     Task getTaskById(Long id);
-    boolean updateTask(Task task, Long id);
-    boolean deleteTask(Long id);
+    boolean updateTask(Task task);
+    boolean deleteTask(long id);
     List<Task> getAllTaskSort();
 
 

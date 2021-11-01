@@ -28,7 +28,7 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public boolean updateTask(Task task, Long id) {
+    public boolean updateTask(Task task) {
         Task updateTask = getById(task.getId());
         updateTask.setName(task.getName());
         updateTask.setDescription(task.getDescription());
@@ -37,8 +37,8 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public boolean deleteTask(Long id) {
-        return TASK_STORAGE.remove(id);
+    public boolean deleteTask(long id) {
+        return TASK_STORAGE.remove(getById(id));
     }
 
     @Override
