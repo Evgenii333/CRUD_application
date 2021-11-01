@@ -55,12 +55,12 @@ public class TaskController {
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
-    @GetMapping(value = "/clients")
+    @GetMapping(value = "/sortedtask")
     public ResponseEntity<List<Task>> read() {
-        final List<Task> clients = taskRepository.getAllTaskSort();
+        final List<Task> tasks = taskRepository.getAllTaskSort();
 
-        return clients != null && !clients.isEmpty()
-                ? new ResponseEntity<>(clients, HttpStatus.OK)
+        return tasks != null && !tasks.isEmpty()
+                ? new ResponseEntity<>(tasks, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

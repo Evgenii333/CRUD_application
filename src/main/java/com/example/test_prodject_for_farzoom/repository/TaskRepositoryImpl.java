@@ -6,20 +6,32 @@ import org.springframework.stereotype.Service;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 @Service
 public class TaskRepositoryImpl implements TaskRepository {
 
     private static final List<Task> TASK_STORAGE = new CopyOnWriteArrayList<>();
+    private static final AtomicLong TASK_ID = new AtomicLong();
+
     public void str(){
         System.out.println(TASK_STORAGE);
     }
 
+
     @Override
     public boolean createTask(Task task) {
+        final Long taskId = TASK_ID.incrementAndGet();
+        task.setId(taskId);
         return TASK_STORAGE.add(task);
     }
+
+   // @Override
+   // public boolean createTask(Task task) {
+    //    return TASK_STORAGE.add(task);
+   // }
 
     @Override
     public Task getTaskById(Long id) {
