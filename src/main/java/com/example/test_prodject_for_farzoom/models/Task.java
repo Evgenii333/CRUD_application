@@ -1,5 +1,4 @@
 package com.example.test_prodject_for_farzoom.models;
-
 import java.util.Date;
 
 public class Task {
@@ -12,11 +11,10 @@ public class Task {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.data = data;
+       // this.data = data;
     }
 
     public Task(){
-
     }
 
     public Long getId() {
