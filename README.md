@@ -1,4 +1,4 @@
-# test_prodject_for_Farzoom_1
+# CRUD_application
 CRUD is an application for creating, reading, editing and deleting tasks.
 The created tasks are stored in CopyOnWriteArrayList.
 Opportunities:
